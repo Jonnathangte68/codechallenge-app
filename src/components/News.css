@@ -4,33 +4,65 @@
 }
 
 #root .container {
+    background-color: #d3ffff;
     flex: 0 1 800px;
 }
 
-.header {
+.container .header {
     background-color: darkcyan;
     padding: 5px 9px;
     display: flex;
     align-items: baseline;
 }
 
-.header .title {
+.container .header .title {
     flex: 2 1 auto;
     color: #FFF;
     font-size: 1.1em;
     font-weight: 600;
 }
 
-.header div {
+.container .header input {
     flex: 1 1 auto;
 }
 
-.header div a {    
+.container .header div {
+    flex: 1 1 auto;
+}
+
+.container .header div a {    
     text-decoration: none;
     color: #d3ffff;
 }
 
-.header a:hover {
+ .header a:hover {
     border-bottom-width: 1px;
     border-bottom-style: solid;
+}
+
+.container .news-link {
+    padding: 10px 6px;
+}
+
+.container .news-link .news-title a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+}
+
+.container .news-link .news-title a:after {
+    content: "\A";
+}
+
+.container .news-link .news-title span {
+    color: #777;
+}
+
+.container .news-link .news-title span a {
+    text-decoration: none;
+    color: #777;     
+}
+
+.container .news-link .news-info {
+    color: #777;
 }
