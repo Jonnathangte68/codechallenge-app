@@ -1,0 +1,36 @@
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+#root .container {
+    flex: 0 1 800px;
+}
+
+.header {
+    background-color: darkcyan;
+    padding: 5px 9px;
+    display: flex;
+    align-items: baseline;
+}
+
+.header .title {
+    flex: 2 1 auto;
+    color: #FFF;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.header div {
+    flex: 1 1 auto;
+}
+
+.header div a {    
+    text-decoration: none;
+    color: #d3ffff;
+}
+
+.header a:hover {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}

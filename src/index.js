@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import { gql } from "apollo-boost";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
+import News from './components/News';
 import './Main.css';
 
 const client = new ApolloClient({
@@ -25,20 +26,7 @@ client
 
 const App = () => (
   <ApolloProvider client={client}>
-      <div>
-            <div>
-                <p>Hacker News</p>
-            </div>
-            <div>
-                <a> | new</a>
-                <a> | past</a>
-                <a> | comments</a>
-                <a> | ask</a>
-                <a> | show</a>
-                <a> | jobs</a>
-                <a> | submit</a>
-            </div>
-      </div>
+      <News></News>
   </ApolloProvider>
 );
 
