@@ -10,7 +10,7 @@ To install please run the following commands:
 	* npm install
 	* npm start
 
-In the project directory, you can run:
+In the project directory, you can run.
 
 ## Description
 
