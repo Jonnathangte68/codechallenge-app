@@ -7,22 +7,8 @@ import News from './components/News';
 import './Main.css';
 
 const client = new ApolloClient({
-  uri: "https://48p1r2roz4.sse.codesandbox.io"
+  uri: "http://localhost:4000"
 });
-
-/*
-client
-  .query({
-    query: gql`
-      {
-        rates(currency: "USD") {
-          currency
-        }
-      }
-    `
-  })
-  .then(result => console.log(result));
-*/
 
 const App = () => (
   <ApolloProvider client={client}>
