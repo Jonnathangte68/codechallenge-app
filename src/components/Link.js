@@ -11,10 +11,10 @@ function Link(props) {
   return renderLink ? (
     <div className="news-link">
       <div className="news-title">
-        {linkData.id}.- <a href={`${linkData.url}`}>{linkData.title}</a>
-        <span>(<a href={linkData.sourceUrl}>{linkData.sourceName}</a>)</span>
+        {props.index}.- <a href={`${linkData.url}`}>{linkData.title}</a>
+        <span>(<a href={linkData.website}>{linkData.website}</a>)</span>
       </div>
-      <div className="news-info">{linkData.timestamp}</div>
+      <div className="news-info">Points {linkData.points} by {linkData.author}</div>
     </div>
   ) : null;
 }
