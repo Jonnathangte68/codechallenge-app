@@ -1,4 +1,36 @@
+## Hacker news app
+
+App created for the code challenge.
+
+## Installation
+
+To install please run the following commands:
+
+	* cd codechallenge-app
+	* npm install
+	* npm start
+
+In the project directory, you can run:
+
+## Description
+
+App was create by using react create-react-app boilerplate and consume information about feeds from the Apollo graphQL server.
+
+## IMPORTANT NOTES
+
+Please start Apollo graphQL before running this App.
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
