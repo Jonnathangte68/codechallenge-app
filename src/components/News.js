@@ -70,6 +70,11 @@ class News extends React.Component {
       </Query>
     );
     const newSymbol = this.state.showForm ? '- ' : '+ ';
+    const showFormX = this.state.showForm;
+    let formAdd;
+    if (showFormX) {
+      formAdd = <AddLink showForm={this.state.showForm} handleSubmit={this.handleSubmit}/>;
+    }
 
     return (
       <div>
@@ -85,10 +90,7 @@ class News extends React.Component {
           </div>
           <NewsListRender />
         </div>
-        <AddLink
-          showForm={this.state.showForm}
-          handleSubmit={this.handleSubmit}
-        />
+        {formAdd}
       </div>
     )
   }
