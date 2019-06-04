@@ -3,38 +3,17 @@ import NewsList from "./NewsList";
 import SearchBox from './SearchBox';
 import AddLink from './AddLink';
 import './News.css';
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
 
 class News extends React.Component {
 
   constructor(props) {
     super(props)
-    const list = [
-      {
-        url: 'https://www.tisource.net/1234',
-        title: 'Big Tech Antitrust Scrutiny Extends to Facebook and Apple',
-        website: 'https://www.tisource.net',
-        author: 'Hacker666',
-        points: 0
-      },
-      {
-        url: 'https://www.tecsource.net/548',
-        title: 'More tech news',
-        website: 'https://www.tecsource.net/',
-        author: 'John',
-        points: 1
-      },
-      {
-        url: 'https://www.tecsource.net/549',
-        title: 'More tech news',
-        website: 'https://www.tecsource.net/',
-        author: 'Adam',
-        points: 20
-      },
-    ];
     this.state = {
       filter: '',
       showForm: false,
-      articleList: list,
+      articleList: [],
     }
   }
 
@@ -71,6 +50,25 @@ class News extends React.Component {
 
 
   render() {
+    const NewsListRender = () => (
+      <Query 
+      query={gql`{ feeds {title, author, points, website, url} }`}
+      onCompleted={data => this.setState({articleList: data.feeds})}
+      >
+        {({ loading, error, data }) => {
+
+          if (loading) return <p>Loading...</p>;
+          if (error) return <p>Error :(</p>;
+
+          return (
+            <NewsList
+              articleList={this.state.articleList}
+              filter={this.state.filter}
+            />
+          );
+        }}
+      </Query>
+    );
     const newSymbol = this.state.showForm ? '- ' : '+ ';
 
     return (
@@ -85,10 +83,7 @@ class News extends React.Component {
             </div>
             <SearchBox handleInput={this.handleInput} />
           </div>
-          <NewsList
-            articleList={this.state.articleList}
-            filter={this.state.filter}
-          />
+          <NewsListRender />
         </div>
         <AddLink
           showForm={this.state.showForm}
